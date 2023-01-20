@@ -3,9 +3,11 @@ package com.pagamentos.cadastrofuncionario.service.impl;
 import com.pagamentos.cadastrofuncionario.entity.Funcionario;
 import com.pagamentos.cadastrofuncionario.repository.FuncionarioRepository;
 import com.pagamentos.cadastrofuncionario.service.FuncionarioService;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class FuncionarioServiceImpl implements FuncionarioService {
 
     private FuncionarioRepository funcionarioRepository;

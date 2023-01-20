@@ -3,9 +3,11 @@ package com.pagamentos.cadastrofuncionario.service.impl;
 import com.pagamentos.cadastrofuncionario.entity.Cargo;
 import com.pagamentos.cadastrofuncionario.repository.CargoRepository;
 import com.pagamentos.cadastrofuncionario.service.CargoService;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class CargoServiceImpl implements CargoService {
 
     private CargoRepository cargoRepository;
