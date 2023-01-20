@@ -13,12 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/funcionario")
 public class FuncionarioController {
 
-    @InjectService
-    private FuncionarioService funcionarioService;
-
-    public FuncionarioController(FuncionarioService funcionarioService) {
-        this.funcionarioService = funcionarioService;
-    }
 
     @PostMapping
     public ResponseEntity<?> inserirFuncionario (@RequestBody FuncionarioPostDto funcionario){
