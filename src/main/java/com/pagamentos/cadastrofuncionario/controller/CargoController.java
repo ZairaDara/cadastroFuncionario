@@ -1,23 +1,42 @@
 package com.pagamentos.cadastrofuncionario.controller;
 
 import com.pagamentos.cadastrofuncionario.dto.CargoPostDto;
-import lombok.extern.slf4j.Slf4j;
+import com.pagamentos.cadastrofuncionario.dto.CargoSaveRequestDTO;
+import com.pagamentos.cadastrofuncionario.dto.CargoSaveResponseDTO;
+import com.pagamentos.cadastrofuncionario.entity.Cargo;
+import com.pagamentos.cadastrofuncionario.service.CargoService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@Slf4j
 @RestController
 @RequestMapping("/cargo")
 public class CargoController {
 
-    @PostMapping
-    public ResponseEntity<?> inserirCargo (@RequestBody CargoPostDto cargo){
-        return ResponseEntity.ok().build();
+    private CargoService cargoService;
+
+    public CargoController(CargoService cargoService) {
+        this.cargoService = cargoService;
     }
 
+    @PostMapping
+    public ResponseEntity<CargoSaveResponseDTO> save (@RequestBody CargoSaveRequestDTO  cargoRequest){
 
+        Cargo cargo = new Cargo();
+        cargo.setDescricaoCargo(cargoRequest.getDescricaoCargo());
+        cargo.setSalarioBase(cargoRequest.getSalarioBase());
+
+        cargoService.save(cargo);
+
+        CargoSaveResponseDTO cargoResponse = new CargoSaveResponseDTO();
+        cargoResponse.setIdCargo(cargo.getIdCargo());
+        return ResponseEntity.status(HttpStatus.CREATED).body(cargoResponse);
+
+
+        //return ResponseEntity.ok().build();
+    }
 }
 
