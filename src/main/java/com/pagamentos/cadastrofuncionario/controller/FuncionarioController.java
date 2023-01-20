@@ -1,14 +1,14 @@
 package com.pagamentos.cadastrofuncionario.controller;
 
 import com.pagamentos.cadastrofuncionario.dto.FuncionarioPostDto;
+import com.pagamentos.cadastrofuncionario.entity.Funcionario;
 import com.pagamentos.cadastrofuncionario.service.FuncionarioService;
+import lombok.extern.slf4j.Slf4j;
 import org.hibernate.service.spi.InjectService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+@Slf4j
 @RestController
 @RequestMapping("/funcionario")
 public class FuncionarioController {
@@ -19,4 +19,8 @@ public class FuncionarioController {
 
         return ResponseEntity.ok().build();
     }
+
+   // @GetMapping(value = "/{idFuncionario}")
+   // public FuncionarioPostDto getById()
+
 }

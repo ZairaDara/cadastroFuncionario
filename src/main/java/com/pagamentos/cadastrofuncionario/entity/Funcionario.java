@@ -18,7 +18,7 @@ public class Funcionario {
     private Long idFuncionario;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "idcargo")
+    @JoinColumn(name = "idCargo")
     private Cargo cargo;
 
     private String nome;

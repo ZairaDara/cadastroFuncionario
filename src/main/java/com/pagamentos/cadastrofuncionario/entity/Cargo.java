@@ -13,7 +13,7 @@ import java.util.Set;
 public class Cargo {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    @Column(name = "idcargo")
+    @Column(name = "idCargo")
     private Long idCargo;
     private String descricaoCargo;
     private BigDecimal salarioBase;
