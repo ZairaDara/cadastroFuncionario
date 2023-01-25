@@ -27,6 +27,8 @@ public class FuncionarioController {
         funcionario.setBonusSalarial(funcionarioPost.getBonusSalarial());
         funcionario.setDataContratacao(funcionarioPost.getDataContratacao());
         funcionario.setDataNascimento(funcionarioPost.getDataNascimento());
+        funcionario.setCargo(funcionario.getCargo());
+
 
         //save
 
