@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55d275e7-d189-4806-a191-2b1a5886688a" name="Changes" comment="criação do controller de cargo">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pagamentos/cadastrofuncionario/dto/CargoResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pagamentos/cadastrofuncionario/dto/CargoSaveRequestDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pagamentos/cadastrofuncionario/dto/CargoSaveResponseDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pagamentos/cadastrofuncionario/controller/CargoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pagamentos/cadastrofuncionario/controller/CargoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pagamentos/cadastrofuncionario/dto/CargoResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pagamentos/cadastrofuncionario/dto/CargoResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pagamentos/cadastrofuncionario/dto/CargoSaveRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pagamentos/cadastrofuncionario/dto/CargoSaveRequestDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
