@@ -1,5 +1,7 @@
 package com.pagamentos.cadastrofuncionario.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -13,6 +15,7 @@ import java.util.Date;
 @Setter
 @ToString
 public class FuncionarioPostDto {
+    @NotNull
     private Long idCargo;
     private String nome;
     private String endereco;

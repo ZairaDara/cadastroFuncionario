@@ -4,6 +4,7 @@ import com.pagamentos.cadastrofuncionario.dto.FuncionarioPostDto;
 import com.pagamentos.cadastrofuncionario.dto.FuncionarioResponseDto;
 import com.pagamentos.cadastrofuncionario.entity.Funcionario;
 import com.pagamentos.cadastrofuncionario.service.FuncionarioService;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,7 @@ public class FuncionarioController {
     public FuncionarioController(FuncionarioService funcionarioService){ this.funcionarioService = funcionarioService;}
 
     @PostMapping
-    public ResponseEntity<FuncionarioResponseDto> save(@RequestBody FuncionarioPostDto funcionarioPost){
+    public ResponseEntity<FuncionarioResponseDto> save(@RequestBody @Valid FuncionarioPostDto funcionarioPost){
 
         Funcionario funcionario = new Funcionario();
         funcionario.setNome(funcionarioPost.getNome());
