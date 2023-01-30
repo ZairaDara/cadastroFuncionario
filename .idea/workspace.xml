@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55d275e7-d189-4806-a191-2b1a5886688a" name="Changes" comment="Criação das opções de consulta e edição de cargos.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pagamentos/cadastrofuncionario/controller/FuncionarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pagamentos/cadastrofuncionario/controller/FuncionarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pagamentos/cadastrofuncionario/entity/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pagamentos/cadastrofuncionario/entity/Funcionario.java" afterDir="false" />
-    </list>
+    <list default="true" id="55d275e7-d189-4806-a191-2b1a5886688a" name="Changes" comment="não aceita mais funcionario sem ter cargo.criação de calculo de salario" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674816046717</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="não aceita mais funcionario sem ter cargo.criação de calculo de salario">
+      <created>1675086363988</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675086363988</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,7 +109,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Criação das opções de consulta e edição de cargos." />
-    <option name="LAST_COMMIT_MESSAGE" value="Criação das opções de consulta e edição de cargos." />
+    <MESSAGE value="não aceita mais funcionario sem ter cargo.criação de calculo de salario" />
+    <option name="LAST_COMMIT_MESSAGE" value="não aceita mais funcionario sem ter cargo.criação de calculo de salario" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/cadastroFuncionario$CadastroFuncionarioApplication.ic" NAME="CadastroFuncionarioApplication Coverage Results" MODIFIED="1674248253012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
