@@ -12,5 +12,4 @@ public interface FuncionarioService {
 
     void delete(Long idFuncionario);
 
-
 }

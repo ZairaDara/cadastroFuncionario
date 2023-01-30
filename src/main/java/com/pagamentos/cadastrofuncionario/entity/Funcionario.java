@@ -18,8 +18,8 @@ public class Funcionario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idFuncionario;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "idCargo")
+    @ManyToOne
+    @JoinColumn(name = "idcargo")
     private Cargo cargo;
 
     private String nome;

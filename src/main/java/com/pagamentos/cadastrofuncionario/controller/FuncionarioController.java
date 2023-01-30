@@ -2,7 +2,10 @@ package com.pagamentos.cadastrofuncionario.controller;
 
 import com.pagamentos.cadastrofuncionario.dto.FuncionarioPostDto;
 import com.pagamentos.cadastrofuncionario.dto.FuncionarioResponseDto;
+import com.pagamentos.cadastrofuncionario.entity.Cargo;
 import com.pagamentos.cadastrofuncionario.entity.Funcionario;
+import com.pagamentos.cadastrofuncionario.repository.CargoRepository;
+import com.pagamentos.cadastrofuncionario.repository.FuncionarioRepository;
 import com.pagamentos.cadastrofuncionario.service.FuncionarioService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -10,16 +13,24 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @Slf4j
 @RestController
 @RequestMapping("/funcionario")
 public class FuncionarioController {
+    private final FuncionarioRepository funcionarioRepository;
+    private final CargoRepository cargoRepository;
 
     private FuncionarioService funcionarioService;
 
-    public FuncionarioController(FuncionarioService funcionarioService){ this.funcionarioService = funcionarioService;}
+    public FuncionarioController(FuncionarioService funcionarioService,
+                                 CargoRepository cargoRepository,
+                                 FuncionarioRepository funcionarioRepository){ this.funcionarioService = funcionarioService;
+        this.cargoRepository = cargoRepository;
+        this.funcionarioRepository = funcionarioRepository;
+    }
 
     @PostMapping
     public ResponseEntity<FuncionarioResponseDto> save(@RequestBody @Valid FuncionarioPostDto funcionarioPost){
@@ -30,7 +41,7 @@ public class FuncionarioController {
         funcionario.setBonusSalarial(funcionarioPost.getBonusSalarial());
         funcionario.setDataContratacao(funcionarioPost.getDataContratacao());
         funcionario.setDataNascimento(funcionarioPost.getDataNascimento());
-        funcionario.setCargo(funcionario.getCargo());
+        //funcionario.setCargo(funcionarioPost.getIdCargo());
 
         //save
         funcionarioService.save(funcionario);
@@ -54,6 +65,19 @@ public class FuncionarioController {
        }else{
            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
        }
+   }
+
+   @DeleteMapping(value = "/{idFuncionario}")
+    public ResponseEntity<String> delete(@PathVariable Long idFuncionario){
+
+        Optional<Funcionario> funcionario = funcionarioService.findById(idFuncionario);
+        if(funcionario.isEmpty()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+
+        //delete
+       funcionarioService.delete(idFuncionario);
+        return ResponseEntity.ok().build();
    }
 
 }

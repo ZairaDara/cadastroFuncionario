@@ -3,6 +3,7 @@ package com.pagamentos.cadastrofuncionario.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.math.BigDecimal;
 import java.util.Set;
@@ -10,6 +11,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
+@ToString
 public class Cargo {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -18,6 +20,6 @@ public class Cargo {
     private String descricaoCargo;
     private BigDecimal salarioBase;
 
-    @OneToMany(mappedBy = "cargo",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "cargo",cascade = CascadeType.ALL)
     private Set<Funcionario> listaFuncionarios;
 }

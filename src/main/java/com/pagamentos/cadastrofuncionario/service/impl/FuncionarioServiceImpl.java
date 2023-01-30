@@ -29,6 +29,6 @@ public class FuncionarioServiceImpl implements FuncionarioService {
 
     @Override
     public void delete(Long idFuncionario) {
-
     }
+
 }
