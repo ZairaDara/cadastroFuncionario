@@ -9,5 +9,6 @@ import lombok.Setter;
 public class CargoSaveResponseDTO {
 
     private Long idCargo;
+    private String message;
 
 }

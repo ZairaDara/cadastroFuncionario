@@ -42,6 +42,18 @@ public class FuncionarioController {
         funcionario.setDataContratacao(funcionarioPost.getDataContratacao());
         funcionario.setDataNascimento(funcionarioPost.getDataNascimento());
 
+        if (funcionario.getNome().isBlank()){
+            FuncionarioResponseDto funcionarioResponse = new FuncionarioResponseDto();
+            funcionarioResponse.setMessage("Nome não pode ser em branco!");
+            return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(funcionarioResponse);
+        }
+
+        if (funcionario.getEndereco().isBlank()){
+            FuncionarioResponseDto funcionarioResponse = new FuncionarioResponseDto();
+            funcionarioResponse.setMessage("Endereço não pode ser em branco!");
+            return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(funcionarioResponse);
+        }
+
         Optional<Cargo> cargo = cargoRepository.findById(funcionarioPost.getIdCargo());
         if (cargo.isEmpty()) throw new IllegalArgumentException("Cargo informado não existe.");
 
@@ -51,6 +63,7 @@ public class FuncionarioController {
         funcionarioService.save(funcionario);
         FuncionarioResponseDto funcionarioResponse = new FuncionarioResponseDto();
         funcionarioResponse.setIdFuncionario(funcionario.getIdFuncionario());
+        funcionarioResponse.setMessage("Funcionário Incluído com Sucesso");
         return ResponseEntity.status(HttpStatus.CREATED).body(funcionarioResponse);
     }
 
