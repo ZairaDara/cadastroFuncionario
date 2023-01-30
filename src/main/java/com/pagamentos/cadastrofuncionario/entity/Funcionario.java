@@ -23,8 +23,9 @@ public class Funcionario {
     @JoinColumn(name = "idcargo")
     @NotNull
     private Cargo cargo;
-
+    @NotNull
     private String nome;
+    @NotNull
     private String endereco;
     private Date dataNascimento;
     private Date dataContratacao;
