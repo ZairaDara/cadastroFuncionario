@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @Slf4j
 @RestController
 @RequestMapping("/funcionario")
@@ -30,18 +32,28 @@ public class FuncionarioController {
         funcionario.setDataNascimento(funcionarioPost.getDataNascimento());
         funcionario.setCargo(funcionario.getCargo());
 
-
         //save
-
         funcionarioService.save(funcionario);
-
         FuncionarioResponseDto funcionarioResponse = new FuncionarioResponseDto();
         funcionarioResponse.setIdFuncionario(funcionario.getIdFuncionario());
         return ResponseEntity.status(HttpStatus.CREATED).body(funcionarioResponse);
-
     }
 
-   // @GetMapping(value = "/{idFuncionario}")
-   // public FuncionarioPostDto getById()
+   @GetMapping(value = "/{idFuncionario}")
+   public ResponseEntity<FuncionarioPostDto> getById(@PathVariable(value = "idFuncionario") Long userID){
+       Optional<Funcionario> funcionario = funcionarioService.findById(userID);
+       if (funcionario.isPresent()){
+           FuncionarioPostDto funcionarioPostDto = new FuncionarioPostDto();
+           funcionarioPostDto.setNome(funcionario.get().getNome());
+           funcionarioPostDto.setEndereco(funcionario.get().getEndereco());
+           funcionarioPostDto.setBonusSalarial(funcionario.get().getBonusSalarial());
+           funcionarioPostDto.setIdCargo(funcionario.get().getCargo().getIdCargo());
+           funcionarioPostDto.setDataNascimento(funcionario.get().getDataNascimento());
+           funcionarioPostDto.setDataContratacao(funcionario.get().getDataContratacao());
+           return ResponseEntity.ok(funcionarioPostDto);
+       }else{
+           return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+       }
+   }
 
 }

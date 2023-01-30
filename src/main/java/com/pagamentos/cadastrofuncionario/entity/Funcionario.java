@@ -4,6 +4,7 @@ package com.pagamentos.cadastrofuncionario.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -11,6 +12,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
+@ToString
 public class Funcionario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +27,5 @@ public class Funcionario {
     private Date dataNascimento;
     private Date dataContratacao;
     private BigDecimal bonusSalarial;
-
-
 
 }
