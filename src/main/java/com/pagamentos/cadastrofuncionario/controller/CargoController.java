@@ -35,6 +35,7 @@ public class CargoController {
 
         CargoSaveResponseDTO cargoResponse = new CargoSaveResponseDTO();
         cargoResponse.setIdCargo(cargo.getIdCargo());
+        cargoResponse.setMessage("Cargo incluído com sucesso!");
         return ResponseEntity.status(HttpStatus.CREATED).body(cargoResponse);
     }
 

@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55d275e7-d189-4806-a191-2b1a5886688a" name="Changes" comment="não aceita mais funcionario sem ter cargo.criação de calculo de salario">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_01_2023_17_31__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27_01_2023_17_31__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_01_2023_14_51__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_01_2023_14_51__Changes_.xml" afterDir="false" />
+    <list default="true" id="55d275e7-d189-4806-a191-2b1a5886688a" name="Changes" comment="tratar erro">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pagamentos/cadastrofuncionario/entity/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pagamentos/cadastrofuncionario/entity/Funcionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pagamentos/cadastrofuncionario/controller/FuncionarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pagamentos/cadastrofuncionario/controller/FuncionarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pagamentos/cadastrofuncionario/dto/FuncionarioResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pagamentos/cadastrofuncionario/dto/FuncionarioResponseDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +24,10 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -39,14 +41,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Zaira/cadastroFuncionario&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "C:/cezar_letcodes/cadastroFuncionario"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.pagamentos.cadastrofuncionario.dto" />
@@ -99,7 +102,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675086363988</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Remocao do Commit">
+      <created>1675103884341</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675103884341</updated>
+    </task>
+    <task id="LOCAL-00004" summary="tratar erro">
+      <created>1675112341050</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675112341050</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -116,7 +133,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Criação das opções de consulta e edição de cargos." />
     <MESSAGE value="não aceita mais funcionario sem ter cargo.criação de calculo de salario" />
-    <option name="LAST_COMMIT_MESSAGE" value="não aceita mais funcionario sem ter cargo.criação de calculo de salario" />
+    <MESSAGE value="Remocao do Commit" />
+    <MESSAGE value="tratar erro" />
+    <option name="LAST_COMMIT_MESSAGE" value="tratar erro" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/cadastroFuncionario$CadastroFuncionarioApplication.ic" NAME="CadastroFuncionarioApplication Coverage Results" MODIFIED="1674248253012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

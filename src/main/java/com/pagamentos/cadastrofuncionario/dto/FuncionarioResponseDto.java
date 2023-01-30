@@ -11,4 +11,6 @@ import lombok.ToString;
 
 public class FuncionarioResponseDto {
     private Long idFuncionario;
+    private String message;
+
 }
