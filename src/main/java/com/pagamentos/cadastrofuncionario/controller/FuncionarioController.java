@@ -13,7 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.math.BigDecimal;
 import java.util.Optional;
 
 @Slf4j
@@ -41,7 +41,11 @@ public class FuncionarioController {
         funcionario.setBonusSalarial(funcionarioPost.getBonusSalarial());
         funcionario.setDataContratacao(funcionarioPost.getDataContratacao());
         funcionario.setDataNascimento(funcionarioPost.getDataNascimento());
-        //funcionario.setCargo(funcionarioPost.getIdCargo());
+
+        Optional<Cargo> cargo = cargoRepository.findById(funcionarioPost.getIdCargo());
+        if (cargo.isEmpty()) throw new IllegalArgumentException("Cargo informado não existe.");
+
+        funcionario.setCargo(cargo.get());
 
         //save
         funcionarioService.save(funcionario);
@@ -80,4 +84,16 @@ public class FuncionarioController {
         return ResponseEntity.ok().build();
    }
 
+    @GetMapping(value = "calculoSalario/{idFuncionario}")
+    public ResponseEntity<BigDecimal> calculoSalarioById(@PathVariable(value = "idFuncionario") Long userID){
+        Optional<Funcionario> funcionario = funcionarioService.findById(userID);
+        if (funcionario.isPresent()){
+            Cargo cargo = funcionario.get().getCargo();
+            BigDecimal salario = funcionario.get().getBonusSalarial().add(cargo.getSalarioBase());
+
+            return ResponseEntity.ok(salario);
+        }else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
 }

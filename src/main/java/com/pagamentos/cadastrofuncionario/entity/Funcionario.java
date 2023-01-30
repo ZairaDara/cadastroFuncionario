@@ -2,6 +2,7 @@ package com.pagamentos.cadastrofuncionario.entity;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -20,6 +21,7 @@ public class Funcionario {
 
     @ManyToOne
     @JoinColumn(name = "idcargo")
+    @NotNull
     private Cargo cargo;
 
     private String nome;
@@ -27,5 +29,6 @@ public class Funcionario {
     private Date dataNascimento;
     private Date dataContratacao;
     private BigDecimal bonusSalarial;
+
 
 }
