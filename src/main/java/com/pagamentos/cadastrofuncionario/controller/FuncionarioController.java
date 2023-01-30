@@ -71,18 +71,6 @@ public class FuncionarioController {
        }
    }
 
-   @DeleteMapping(value = "/{idFuncionario}")
-    public ResponseEntity<String> delete(@PathVariable Long idFuncionario){
-
-        Optional<Funcionario> funcionario = funcionarioService.findById(idFuncionario);
-        if(funcionario.isEmpty()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
-
-        //delete
-       funcionarioService.delete(idFuncionario);
-        return ResponseEntity.ok().build();
-   }
 
     @GetMapping(value = "calculoSalario/{idFuncionario}")
     public ResponseEntity<BigDecimal> calculoSalarioById(@PathVariable(value = "idFuncionario") Long userID){
